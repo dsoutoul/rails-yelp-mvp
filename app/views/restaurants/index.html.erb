@@ -1,0 +1,23 @@
+<h2 class="text-center">List of restaurants in your area</h2>
+
+<div class="cards">
+<% @restaurants.each do |restaurant| %>
+      <div class="card mb-3 rounded-pill border border-dark" style="width: 40rem;">
+        <div class="card-content text-center m-2">
+        <p><strong>Name:</strong> <%= link_to restaurant.name, restaurant_path(restaurant) %></p>
+        <p><strong>Address:</strong> <%= restaurant.address %></p>
+        <p><strong>Category:</strong> <%= restaurant.category %></p>
+        <p><strong>Phone Number:</strong> <%= restaurant.phone_number %></p>
+
+        </div>
+        <!-- <div class="card-image d-flex justify-content-between">
+          <img src="https://unsplash.com/photos/poI7DelFiVA">
+        </div> -->
+      </div>
+
+    <% end %>
+    </div>
+</table>
+
+<%= link_to 'New Restaurant', new_restaurant_path, class: "btn btn-primary" %>
+
